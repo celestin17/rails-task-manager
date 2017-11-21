@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3 text-center">
+      <h1>
+        <%= @task.title %>
+      </h1>
+      <h3><%= @task.details %></h3>
+      <p>
+        <% if @task.completed  %>
+        <i class="fa fa-check-square-o" aria-hidden="true"> This task is completed</i>
+      <% else %>
+        <i class="fa fa-square-o" aria-hidden="true"> This task isn't completed</i>
+      <% end %>
+    </p>
+    <%= link_to "Update it", edit_task_path %>
+    <%= link_to "Back to tasks", tasks_path %>
+    <%= link_to "Delete task", destroy_task_path(@task), method: :delete %>
+    </div>
+  </div>
+</div>
